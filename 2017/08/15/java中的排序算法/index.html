@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,算法," />
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="#java里的排序算法 ##以leetcode上一题为例 ##题目：Array Partition I #####Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes su">
+<meta name="description" content="java里的排序算法以leetcode上一题为例题目：Array Partition IGiven an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai,">
+<meta name="keywords" content="java,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java里的排序算法">
 <meta property="og:url" content="http://yoursite.com/2017/08/15/java中的排序算法/index.html">
 <meta property="og:site_name" content="山丘">
-<meta property="og:description" content="#java里的排序算法 ##以leetcode上一题为例 ##题目：Array Partition I #####Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes su">
+<meta property="og:description" content="java里的排序算法以leetcode上一题为例题目：Array Partition IGiven an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-15T15:26:19.311Z">
+<meta property="og:updated_time" content="2017-08-16T10:30:40.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java里的排序算法">
-<meta name="twitter:description" content="#java里的排序算法 ##以leetcode上一题为例 ##题目：Array Partition I #####Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes su">
+<meta name="twitter:description" content="java里的排序算法以leetcode上一题为例题目：Array Partition IGiven an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai,">
 
 
 
@@ -306,6 +307,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -333,37 +356,34 @@
       
 
       
-        <p>#java里的排序算法</p>
-<p>##以leetcode上一题为例</p>
-<p>##题目：Array Partition I</p>
-<p>#####Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.</p>
+        <p>java里的排序算法<br>以leetcode上一题为例<br>题目：Array Partition I<br>Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.</p>
 <p>Example 1:</p>
 <p>Input: [1,4,3,2]</p>
 <p>Output: 4</p>
 <p>Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).</p>
 <p>Note:</p>
 <p>n is a positive integer, which is in the range of [1, 10000].<br>All the integers in the array will be in the range of [-10000, 10000].</p>
-<h5 id=""><a href="#" class="headerlink" title=" "></a> </h5><hr>
-<h2 id="排序方法"><a href="#排序方法" class="headerlink" title="##排序方法##"></a>##排序方法##</h2><ul>
-<li>###1.冒泡排序</li>
+<hr>
+<h2 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h2><ul>
+<li>1.冒泡排序</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    void bubblesort(int[] nums) &#123;</div><div class="line">		for (int i = 0; i &lt; nums.length; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; nums.length - 1 - i; j++) &#123;</div><div class="line">				if (nums[j] &gt; nums[j + 1]) &#123;</div><div class="line">					int temp = nums[j];</div><div class="line">					nums[j] = nums[j + 1];</div><div class="line">					nums[j + 1] = temp;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public int arrayPairSum(int[] nums) &#123;</div><div class="line">		bubblesort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  ###冒泡排序的优化<br>可以看出冒泡排序本身复杂度非常高，在排序完成后还有大量无意义的判断，针对这一特点我们可以如下优化：</p>
+<p>  冒泡排序的优化<br>可以看出冒泡排序本身复杂度非常高，在排序完成后还有大量无意义的判断，针对这一特点我们可以如下优化：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    void bubblesort(int[] nums) &#123;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i++) &#123;</div><div class="line">			boolean flag = true;</div><div class="line">			for (int j = 0; j &lt; nums.length - 1 - i; j++) &#123;</div><div class="line">				if (nums[j] &gt;= nums[j + 1]) &#123;</div><div class="line">					int temp = nums[j];</div><div class="line">					nums[j] = nums[j + 1];</div><div class="line">					nums[j + 1] = temp;</div><div class="line">					flag = false;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			if (flag) &#123;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public int arrayPairSum(int[] nums) &#123;</div><div class="line">		bubblesort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>###2.选择排序</li>
+<li>2.选择排序</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    int arrayPairSum(int[] nums) &#123;</div><div class="line">		selectsort(nums,0);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line">	void selectsort(int[] nums,int low) &#123;</div><div class="line">		int key = low;</div><div class="line">		for(int i = low;i&lt;nums.length;i++) &#123;</div><div class="line">			if(nums[i]&lt;nums[key]) &#123;</div><div class="line">				key = i;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		swap(nums,low,key);</div><div class="line">		low ++;</div><div class="line">		if(low&lt;nums.length) &#123;</div><div class="line">			selectsort(nums,low);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	void swap(int[] nums,int one,int two) &#123;</div><div class="line">		int temp = nums[one];</div><div class="line">		nums[one] = nums[two];</div><div class="line">		nums[two] = temp;</div><div class="line">	&#125;</div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for(int i = 0;i&lt;nums.length;i+=2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>###3.插入排序</li>
+<li>3.插入排序</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int arrayPairSum(int[] nums) &#123;</div><div class="line">		insertsort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void insertsort(int[] nums) &#123;</div><div class="line">		for (int i = 1; i &lt; nums.length; i++) &#123;</div><div class="line">			int j = i;</div><div class="line">			int temp = nums[i];</div><div class="line">			while (j &gt; 0 &amp;&amp; temp &lt; nums[j - 1]) &#123;</div><div class="line">				nums[j] = nums[j - 1];</div><div class="line">				j--;</div><div class="line">			&#125;</div><div class="line">			nums[j] = temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>###4.希尔排序</li>
+<li>4.希尔排序</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int arrayPairSum(int[] nums) &#123;</div><div class="line">		shellsort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;// dis循环二分；对每个dis分组插入排序；</div><div class="line"></div><div class="line">	void shellsort(int[] nums) &#123;</div><div class="line">		for (int dis = nums.length / 2; dis &gt; 0; dis = dis / 2) &#123;</div><div class="line">			for (int i = dis; i &lt; nums.length; i ++) &#123;</div><div class="line">				int j = i;</div><div class="line">				int temp = nums[i];</div><div class="line">				while (j &gt; dis - 1 &amp;&amp; temp &lt; nums[j - dis]) &#123;</div><div class="line">					nums[j] = nums[j - dis];</div><div class="line">					j -= dis;</div><div class="line">				&#125;</div><div class="line">				nums[j] = temp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void swap(int[] nums, int one, int two) &#123;</div><div class="line">		int temp = nums[one];</div><div class="line">		nums[one] = nums[two];</div><div class="line">		nums[two] = temp;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>###5.快速排序</li>
+<li>5.快速排序</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int arrayPairSum(int[] nums) &#123;</div><div class="line">		quicksort(nums, 0, nums.length - 1);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void quicksort(int[] nums, int low, int high) &#123;</div><div class="line">		int start = low;</div><div class="line">		int end = high;</div><div class="line">		int key = nums[low];</div><div class="line">		while (end &gt; start) &#123;</div><div class="line">			while (end &gt; start &amp;&amp; nums[end] &gt;= key) &#123;</div><div class="line">				end--;</div><div class="line">			&#125;</div><div class="line">			if (nums[end] &lt; key) &#123;</div><div class="line">				swap(nums, end, start);</div><div class="line">			&#125;</div><div class="line">			while (end &gt; start &amp;&amp; nums[start] &lt;= nums[end]) &#123;</div><div class="line">				start++;</div><div class="line">			&#125;</div><div class="line">			if (nums[start] &gt; nums[end]) &#123;</div><div class="line">				swap(nums, end, start);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		if (start &gt; low) &#123;</div><div class="line">			quicksort(nums, low, start - 1);</div><div class="line">		&#125;</div><div class="line">		if (end &lt; high) &#123;</div><div class="line">			quicksort(nums, end + 1, high);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void swap(int[] nums, int one, int two) &#123;</div><div class="line">		int temp = nums[one];</div><div class="line">		nums[one] = nums[two];</div><div class="line">		nums[two] = temp;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
@@ -379,6 +399,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
       
 
       
@@ -481,7 +509,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -513,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"> </span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序方法"><span class="nav-number"></span> <span class="nav-text">##排序方法##</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序方法"><span class="nav-number">1.</span> <span class="nav-text">排序方法</span></a></li></ol></div>
             
 
           </div>
