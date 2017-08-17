@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,leetcode，算法," />
+  <meta name="keywords" content="java,leetcode,算法," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="#题目：Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.Note:The given integer is guaranteed to fit within the range of a 3">
-<meta name="keywords" content="java,leetcode，算法">
+<meta name="description" content="题目：Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.Note:The given integer is guaranteed to fit within the range of a 32">
+<meta name="keywords" content="java,leetcode,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="476. Number Complement">
 <meta property="og:url" content="http://yoursite.com/2017/08/17/476. Number Complement/index.html">
 <meta property="og:site_name" content="山丘">
-<meta property="og:description" content="#题目：Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.Note:The given integer is guaranteed to fit within the range of a 3">
+<meta property="og:description" content="题目：Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.Note:The given integer is guaranteed to fit within the range of a 32">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-17T03:42:59.913Z">
+<meta property="og:updated_time" content="2017-08-17T09:54:33.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="476. Number Complement">
-<meta name="twitter:description" content="#题目：Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.Note:The given integer is guaranteed to fit within the range of a 3">
+<meta name="twitter:description" content="题目：Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.Note:The given integer is guaranteed to fit within the range of a 32">
 
 
 
@@ -356,9 +356,8 @@
       
 
       
-        <p>#题目：<br>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.<br>Note:<br>The given integer is guaranteed to fit within the range of a 32-bit signed integer.<br>You could assume no leading zero bit in the integer’s binary representation.<br>Example 1:<br>Input: 5<br>Output: 2<br>Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.<br>Example 2:<br>Input: 1<br>Output: 0<br>Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.</p>
-<p>#解答<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	// 算法设计：容易看出num和result转化为二进制相加正好为11...1；即2的i次方-1；</div><div class="line">	public int findComplement(int num) &#123;</div><div class="line">		int i = 0;</div><div class="line">		int result = 0;</div><div class="line">		while (Math.pow(2, i) &lt;= num) &#123;</div><div class="line">			result += Math.pow(2, i);</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		return (result - num);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.<br>Note:<br>The given integer is guaranteed to fit within the range of a 32-bit signed integer.<br>You could assume no leading zero bit in the integer’s binary representation.<br>Example 1:<br>Input: 5<br>Output: 2<br>Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.<br>Example 2:<br>Input: 1<br>Output: 0<br>Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	// 算法设计：容易看出num和result转化为二进制相加正好为11...1；即2的i次方-1；</div><div class="line">	public int findComplement(int num) &#123;</div><div class="line">		int i = 0;</div><div class="line">		int result = 0;</div><div class="line">		while (Math.pow(2, i) &lt;= num) &#123;</div><div class="line">			result += Math.pow(2, i);</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		return (result - num);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -377,7 +376,9 @@
           
             <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/leetcode，算法/" rel="tag"># leetcode，算法</a>
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -390,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/15/java中的排序算法/" rel="next" title="java里的排序算法">
-                <i class="fa fa-chevron-left"></i> java里的排序算法
+              <a href="/2017/08/17/412.Fizz Buzz/" rel="next" title="412. Fizz Buzz">
+                <i class="fa fa-chevron-left"></i> 412. Fizz Buzz
               </a>
             
           </div>
@@ -399,6 +400,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/17/344.Reverse String/" rel="prev" title="344.Reverse String">
+                344.Reverse String <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -450,8 +455,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -466,7 +480,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -488,7 +502,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -513,6 +527,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
