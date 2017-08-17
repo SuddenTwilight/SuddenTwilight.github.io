@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/485. Max Consecutive Ones/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/387. First Unique Character in a String/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -286,7 +286,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/485. Max Consecutive Ones/" itemprop="url">485. Max Consecutive Ones</a></h1>
+                <a class="post-title-link" href="/2017/08/17/387. First Unique Character in a String/" itemprop="url">387. First Unique Character in a String</a></h1>
         
 
         <div class="post-meta">
@@ -298,7 +298,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:46+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:05+08:00">
                 2017-08-17
               </time>
             
@@ -360,9 +360,11 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a binary array, find the maximum number of consecutive 1s in this array.<br>Example 1:</p>
-<p>Input: [1,1,0,1,1,1]Output: 3Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.<br>Note:<br>The input array will only contain 0 and 1.<br>The length of input array is a positive integer and will not exceed 10,000</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int findMaxConsecutiveOnes(int[] nums) &#123;</div><div class="line">		int max = 0, temp = 0;</div><div class="line">		for (int i : nums) &#123;</div><div class="line">			if (i == 1) &#123;</div><div class="line">				temp++;</div><div class="line">			&#125; else &#123;</div><div class="line">				temp = 0;</div><div class="line">			&#125;</div><div class="line">			max = Math.max(max, temp);</div><div class="line">		&#125;</div><div class="line">		return max;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a string, find the first non-repeating character in it and return it’s index. If it doesn’t exist, return -1.</p>
+<p>Examples:</p>
+<p>s = “leetcode”<br>return 0.</p>
+<p>s = “loveleetcode”,<br>return 2.<br>Note: You may assume the string contain only lowercase letters.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int firstUniqChar(String s) &#123;</div><div class="line">        int freq [] = new int[26];</div><div class="line">        for(int i = 0; i &lt; s.length(); i ++)</div><div class="line">            freq [s.charAt(i) - &apos;a&apos;] ++;</div><div class="line">        for(int i = 0; i &lt; s.length(); i ++)</div><div class="line">            if(freq [s.charAt(i) - &apos;a&apos;] == 1)</div><div class="line">                return i;</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -410,7 +412,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/136. Single Number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/169. Majority Element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -429,7 +431,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/136. Single Number/" itemprop="url">136. Single Number</a></h1>
+                <a class="post-title-link" href="/2017/08/17/169. Majority Element/" itemprop="url">169. Majority Element</a></h1>
         
 
         <div class="post-meta">
@@ -441,7 +443,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:46+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:05+08:00">
                 2017-08-17
               </time>
             
@@ -503,10 +505,10 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an array of integers, every element appears twice except for one. Find that single one.</p>
-<p>Note:<br>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int singleNumber(int[] nums) &#123;</div><div class="line">		int result = 0;</div><div class="line">		Arrays.sort(nums);</div><div class="line">		int l = nums.length - 1;</div><div class="line">		if (l == 0) &#123;</div><div class="line">			result = 0;</div><div class="line">		&#125; else if (nums[l] != nums[l - 1] &amp;&amp; nums[l] != nums[l - 2]) &#123;</div><div class="line">			result = l;</div><div class="line">		&#125; else if (nums[0] != nums[1]) &#123;</div><div class="line">			result = 0;</div><div class="line">		&#125; else &#123;</div><div class="line">			for (int i = 2; i &lt; l; i++) &#123;</div><div class="line">				result = i;</div><div class="line">				if (nums[i] != nums[i + 1] &amp;&amp; nums[i] != nums[i - 1]) &#123;</div><div class="line">					break;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return nums[result];</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public int singleNumber(int[] nums) &#123;</div><div class="line">    int ans =0;</div><div class="line">    int len = nums.length;</div><div class="line">    for(int i=0;i!=len;i++)</div><div class="line">        ans ^= nums[i];</div><div class="line">    return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>Credits:<br>Special thanks to @ts for adding this problem and creating all test cases.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int majorityElement(int[] num) &#123;</div><div class="line">		int major = num[0], count = 1;</div><div class="line">		for (int i = 1; i &lt; num.length; i++) &#123;</div><div class="line">			if (count == 0) &#123;</div><div class="line">				count++;</div><div class="line">				major = num[i];</div><div class="line">			&#125; else if (major == num[i]) &#123;</div><div class="line">				count++;</div><div class="line">			&#125; else</div><div class="line">				count--;</div><div class="line">		&#125;</div><div class="line">		return major;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -554,7 +556,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/521. Longest Uncommon Subsequence I/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/599. Minimum Index Sum of Two Lists/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -573,7 +575,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/521. Longest Uncommon Subsequence I/" itemprop="url">521. Longest Uncommon Subsequence I</a></h1>
+                <a class="post-title-link" href="/2017/08/17/599. Minimum Index Sum of Two Lists/" itemprop="url">599. Minimum Index Sum of Two Lists</a></h1>
         
 
         <div class="post-meta">
@@ -585,7 +587,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:46+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:05+08:00">
                 2017-08-17
               </time>
             
@@ -647,11 +649,10 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a group of two strings, you need to find the longest uncommon subsequence of this group of two strings. The longest uncommon subsequence is defined as the longest subsequence of one of these strings and this subsequence should not be any subsequence of the other strings.</p>
-<p>A subsequence is a sequence that can be derived from one sequence by deleting some characters without changing the order of the remaining elements. Trivially, any string is a subsequence of itself and an empty string is a subsequence of any string.</p>
-<p>The input will be two strings, and the output needs to be the length of the longest uncommon subsequence. If the longest uncommon subsequence doesn’t exist, return -1.</p>
-<p>Example 1:<br>Input: “aba”, “cdc”<br>Output: 3<br>Explanation: The longest uncommon subsequence is “aba” (or “cdc”),<br>because “aba” is a subsequence of “aba”,<br>but not a subsequence of any other strings in the group of two strings. </p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public int findLUSlength(String a, String b) &#123;</div><div class="line">    return a.equals(b) ? -1 : Math.max(a.length(), b.length());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite restaurants represented by strings.</p>
+<p>You need to help them find out their common interest with the least list index sum. If there is a choice tie between answers, output all of them with no order requirement. You could assume there always exists an answer.</p>
+<p>Example 1:<br>Input:<br>[“Shogun”, “Tapioca Express”, “Burger King”, “KFC”]<br>[“Piatti”, “The Grill at Torrey Pines”, “Hungry Hunter Steakhouse”, “Shogun”]<br>Output: [“Shogun”]<br>Explanation: The only restaurant they both like is “Shogun”.<br>Example 2:<br>Input:<br>[“Shogun”, “Tapioca Express”, “Burger King”, “KFC”]<br>[“KFC”, “Shogun”, “Burger King”]<br>Output: [“Shogun”]<br>Explanation: The restaurant they both like and have the least index sum is “Shogun” with index sum 1 (0+1).<br>Note:<br>The length of both lists will be in the range of [1, 1000].<br>The length of strings in both lists will be in the range of [1, 30].<br>The index is starting from 0 to the list length minus 1.<br>No duplicates in both lists.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public String[] findRestaurant(String[] list1, String[] list2) &#123;</div><div class="line">		HashMap&lt;Integer, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();</div><div class="line">		for (int i = 0; i &lt; list1.length; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; list2.length; j++) &#123;</div><div class="line">				if (list1[i].equals(list2[j])) &#123;</div><div class="line">					if (!map.containsKey(i + j)) &#123;</div><div class="line">						map.put(i + j, new ArrayList&lt;String&gt;());</div><div class="line">					&#125;</div><div class="line">					map.get(i + j).add(list1[i]);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		int minsum = Integer.MAX_VALUE;</div><div class="line">		for (int i : map.keySet()) &#123;</div><div class="line">			minsum = Math.min(minsum, i);</div><div class="line">		&#125;</div><div class="line">		String[] res = new String[map.get(minsum).size()];</div><div class="line">		return map.get(minsum).toArray(res);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -699,7 +700,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/637. Average of Levels in Binary Tree/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/404. Sum of Left Leaves/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -718,7 +719,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/637. Average of Levels in Binary Tree/" itemprop="url">637. Average of Levels in Binary Tree</a></h1>
+                <a class="post-title-link" href="/2017/08/17/404. Sum of Left Leaves/" itemprop="url">404. Sum of Left Leaves</a></h1>
         
 
         <div class="post-meta">
@@ -730,7 +731,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:45+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:05+08:00">
                 2017-08-17
               </time>
             
@@ -792,298 +793,12 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a non-empty binary tree, return the average value of the nodes on each level in the form of an array.</p>
-<p>Example 1:<br>Input:<br>    3<br>   / \<br>  9  20<br>    /  \<br>   15   7<br>Output: [3, 14.5, 11]<br>Explanation:<br>The average value of nodes on level 0 is 3,  on level 1 is 14.5, and on level 2 is 11. Hence return [3, 14.5, 11].<br>Note:<br>The range of node’s value is in the range of 32-bit signed integer.</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for a binary tree node. public class TreeNode &#123; int val; TreeNode</div><div class="line"> * left; TreeNode right; TreeNode(int x) &#123; val = x; &#125; &#125;</div><div class="line"> */</div><div class="line">public class Solution &#123;</div><div class="line">	public List&lt;Double&gt; averageOfLevels(TreeNode root) &#123;</div><div class="line">		List&lt;Double&gt; res = new ArrayList&lt;&gt;();// 新建表存放答案</div><div class="line">		Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();// 新建链表存放二叉树的数值</div><div class="line">		queue.add(root);// 把二叉树顶行存放在queue链表里</div><div class="line">		while (!queue.isEmpty()) &#123;// 当queue有值时（说明没有加完）</div><div class="line">			long sum = 0, count = 0;</div><div class="line">			Queue&lt;TreeNode&gt; temp = new LinkedList&lt;&gt;();// 新建中间链表存放数值</div><div class="line">			while (!queue.isEmpty()) &#123;</div><div class="line">				TreeNode n = queue.remove();// 把queue中的数值提取出来</div><div class="line">				sum += n.val;// sum加此数值</div><div class="line">				count++;// 计数一次</div><div class="line">				if (n.left != null) &#123;</div><div class="line">					temp.add(n.left);// 把下一行左列放入中间表</div><div class="line">				&#125;</div><div class="line">				if (n.right != null) &#123;</div><div class="line">					temp.add(n.right);// 把下一行右列放入中间表</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			queue = temp;// 使queue等于中间表（即二叉树下一行）</div><div class="line">			res.add(sum * 1.00 / count);// 添加此行平均值</div><div class="line">		&#125;</div><div class="line">		return res;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/496. Next Greater Element I/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="詹翀&杨旻璐">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="山丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/17/496. Next Greater Element I/" itemprop="url">496. Next Greater Element I</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:45+08:00">
-                2017-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2. Find all the next greater numbers for nums1’s elements in the corresponding places of nums2.</p>
-<p>The Next Greater Number of a number x in nums1 is the first greater number to its right in nums2. If it does not exist, output -1 for this number.</p>
-<p>Example 1:<br>Input: nums1 = [4,1,2], nums2 = [1,3,4,2].<br>Output: [-1,3,-1]<br>Explanation:<br>    For number 4 in the first array, you cannot find the next greater number for it in the second array, so output -1.<br>    For number 1 in the first array, the next greater number for it in the second array is 3.<br>    For number 2 in the first array, there is no next greater number for it in the second array, so output -1.<br>Example 2:<br>Input: nums1 = [2,4], nums2 = [1,2,3,4].<br>Output: [3,-1]<br>Explanation:<br>    For number 2 in the first array, the next greater number for it in the second array is 3.<br>    For number 4 in the first array, there is no next greater number for it in the second array, so output -1.<br>Note:<br>All elements in nums1 and nums2 are unique.<br>The length of both nums1 and nums2 would not exceed 1000.</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int[] nextGreaterElement(int[] findNums, int[] nums) &#123;</div><div class="line">		int l = findNums.length;</div><div class="line">		int[] result = new int[l];</div><div class="line">		for (int i = 0; i &lt; l; i++) &#123;</div><div class="line">			int key = findNums[i];// 对于i，先找到对应的findNums数值；</div><div class="line">			int q = cor(nums, key);// 找到该数值在nums数组里的位置</div><div class="line">			result[i] = next(nums, q, key);// 找到该值对应位置以后第一个比该值大的数值</div><div class="line">		&#125;</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int cor(int[] nums, int i) &#123;</div><div class="line">		int cor = 0;</div><div class="line">		for (int j = 0; j &lt; nums.length; j++) &#123;</div><div class="line">			if (nums[j] == i) &#123;</div><div class="line">				cor = j;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return cor;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int next(int[] nums, int q, int k) &#123;</div><div class="line">		int l = nums.length;</div><div class="line">		int next = 0;</div><div class="line">		int temp = k;</div><div class="line">		boolean n = true;// 如果之后没有比该值大的值则为真，使返回值为-1；</div><div class="line">		if (q == -1) &#123;</div><div class="line">			next = -1;</div><div class="line">		&#125; else &#123;</div><div class="line">			for (int i = q + 1; i &lt; l; i++) &#123;</div><div class="line">				if (nums[i] &gt; temp) &#123;</div><div class="line">					temp = nums[i];</div><div class="line">					n = false;</div><div class="line">					break;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			next = (n ? -1 : temp);</div><div class="line">		&#125;</div><div class="line">		return next;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/463. Island Perimeter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="詹翀&杨旻璐">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="山丘">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/17/463. Island Perimeter/" itemprop="url">463. Island Perimeter</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:45+08:00">
-                2017-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells). The island doesn’t have “lakes” (water inside that isn’t connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don’t exceed 100. Determine the perimeter of the island.</p>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Find the sum of all left leaves in a given binary tree.</p>
 <p>Example:</p>
-<p>[[0,1,0,0],<br> [1,1,1,0],<br> [0,1,0,0],<br> [1,1,0,0]]</p>
-<p>Answer: 16</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int islandPerimeter(int[][] grid) &#123;</div><div class="line">		int count = 0;// 计算1的数量；</div><div class="line">		int l = grid.length;</div><div class="line">		int l2 = grid[0].length;// 防止越界；</div><div class="line">		int dis = 0;</div><div class="line">		int result = 0;</div><div class="line">		if (l == 1) &#123;// 防dis方法越界；</div><div class="line">			result = 4;</div><div class="line">		&#125;</div><div class="line">		if (l == 2) &#123;// 防dis方法越界；</div><div class="line">			int sum = 0;</div><div class="line">			for (int i = 0; i &lt; l; i++) &#123;</div><div class="line">				for (int j = 0; j &lt; l2; j++) &#123;</div><div class="line">					if (grid[i][j] == 1) &#123;</div><div class="line">						sum++;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			result = sum * 2 + 2;</div><div class="line">		&#125;</div><div class="line">		for (int i = 0; i &lt; l; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; l2; j++) &#123;</div><div class="line">				if (grid[i][j] == 1) &#123;</div><div class="line">					count++;</div><div class="line">					dis += dis(grid, i, j);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		result = count * 4 - dis;// 每个小方块初始周长为4；减去互相交界的次数即为总周长</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int dis(int[][] nums, int a, int b) &#123;// 计算两个小方块交界的次数</div><div class="line">		int dis = 0;</div><div class="line">		int l = nums.length - 1;</div><div class="line">		int l2 = nums[0].length - 1;</div><div class="line">		if (a &gt; 0)</div><div class="line">			dis += (nums[a - 1][b] == 0 ? 0 : 1);</div><div class="line">		if (a &lt; l)</div><div class="line">			dis += (nums[a + 1][b] == 0 ? 0 : 1);</div><div class="line">		if (b &gt; 0)</div><div class="line">			dis += (nums[a][b - 1] == 0 ? 0 : 1);</div><div class="line">		if (b &lt; l2)</div><div class="line">			dis += (nums[a][b + 1] == 0 ? 0 : 1);</div><div class="line">		return dis;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>3
+</code></pre><p>   / \<br>  9  20<br>    /  \<br>   15   7</p>
+<p>There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">public int sumOfLeftLeaves(TreeNode root) &#123;</div><div class="line">    if(root == null) return 0;</div><div class="line">    int ans = 0;</div><div class="line">    if(root.left != null) &#123;</div><div class="line">        if(root.left.left == null &amp;&amp; root.left.right == null) ans += root.left.val;</div><div class="line">        else ans += sumOfLeftLeaves(root.left);</div><div class="line">    &#125;</div><div class="line">    ans += sumOfLeftLeaves(root.right);</div><div class="line">    </div><div class="line">    return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1131,7 +846,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/620. Not Boring Movies/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/122. Best Time to Buy and Sell Stock II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -1150,7 +865,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/620. Not Boring Movies/" itemprop="url">620. Not Boring Movies</a></h1>
+                <a class="post-title-link" href="/2017/08/17/122. Best Time to Buy and Sell Stock II/" itemprop="url">122. Best Time to Buy and Sell Stock II</a></h1>
         
 
         <div class="post-meta">
@@ -1162,7 +877,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T18:03:45+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:05+08:00">
                 2017-08-17
               </time>
             
@@ -1224,10 +939,9 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>X city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies’ ratings and descriptions.</p>
-<p>Please write a SQL query to output movies with an odd numbered ID and a description that is not ‘boring’. Order the result by rating.<br>For example, table cinema:</p>
-<p>+———+———–+————–+———–+<br>|   id    | movie     |  description |  rating   |<br>+———+———–+————–+———–+<br>|   1     | War       |   great 3D   |   8.9     |<br>|   2     | Science   |   fiction    |   8.5     |<br>|   3     | irish     |   boring     |   6.2     |<br>|   4     | Ice song  |   Fantacy    |   8.6     |<br>|   5     | House card|   Interesting|   9.1     |<br>+———+———–+————–+———–+<br>For the example above, the output should be:<br>+———+———–+————–+———–+<br>|   id    | movie     |  description |  rating   |<br>+———+———–+————–+———–+<br>|   5     | House card|   Interesting|   9.1     |<br>|   1     | War       |   great 3D   |   8.9     |<br>+———+———–+————–+———–+</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select*</div><div class="line">from cinema</div><div class="line">where id%2 != 0 and description != &apos;boring&apos;</div><div class="line">order by rating desc;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] demo = &#123;1,2,4&#125;;</div><div class="line">		System.out.println(maxProfit(demo));</div><div class="line">	&#125;</div><div class="line">    public static int maxProfit(int[] prices) &#123;</div><div class="line">    	return maxtemp(prices,0,0);</div><div class="line">    &#125;</div><div class="line">    static int maxtemp(int[]prices,int start,int max) &#123;</div><div class="line">        if(prices.length &lt; 2)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        if(start&gt;prices.length-2)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">    	int mintemp = start;</div><div class="line">    	for(int i = start;i&lt;prices.length;i++) &#123;</div><div class="line">            if(prices[i]&gt;prices[start])&#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">    		if(i == prices.length-1&amp;&amp;prices[i]&lt;prices[start])&#123; </div><div class="line">    			return 0;</div><div class="line">    		&#125;</div><div class="line">            if(i == prices.length-1)&#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">    		if(prices[i]&lt;prices[start]&amp;&amp;prices[i]&lt;prices[i+1]) &#123; </div><div class="line">    			mintemp = i;</div><div class="line">    			break;</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">    	int maxtemp = mintemp+1;</div><div class="line">    	for(int i = maxtemp;i&lt;prices.length;i++) &#123;</div><div class="line">    		if(i == prices.length-1)&#123;</div><div class="line">    			if(prices[i]&gt;prices[maxtemp]) &#123;</div><div class="line">    				maxtemp = i;</div><div class="line">    				break;</div><div class="line">    			&#125;</div><div class="line">    			break;</div><div class="line">    		&#125;</div><div class="line">    		if(prices[i]&lt;prices[maxtemp]) &#123;</div><div class="line">    			break;</div><div class="line">    		&#125;</div><div class="line">    		if(prices[i]&gt;prices[maxtemp]&amp;&amp;prices[i]&gt;prices[i+1]) &#123;</div><div class="line">    			maxtemp = i;</div><div class="line">    			break;</div><div class="line">    		&#125;</div><div class="line">    	&#125;</div><div class="line">    	return max += prices[maxtemp]-prices[mintemp]+maxtemp(prices,maxtemp+1,max);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1275,7 +989,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/575. Distribute Candies/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/167. Two Sum II - Input array is sorted/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -1294,7 +1008,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/575. Distribute Candies/" itemprop="url">575. Distribute Candies</a></h1>
+                <a class="post-title-link" href="/2017/08/17/167. Two Sum II - Input array is sorted/" itemprop="url">167. Two Sum II - Input array is sorted</a></h1>
         
 
         <div class="post-meta">
@@ -1306,7 +1020,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:53:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:04+08:00">
                 2017-08-17
               </time>
             
@@ -1368,10 +1082,11 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an integer array with even length, where different numbers in this array represent different kinds of candies. Each number means one candy of the corresponding kind. You need to distribute these candies equally in number to brother and sister. Return the maximum number of kinds of candies the sister could gain.</p>
-<p>Example 1:<br>Input: candies = [1,1,2,2,3,3]<br>Output: 3<br>Explanation:<br>There are three different kinds of candies (1, 2 and 3), and two candies for each kind.<br>Optimal distribution: The sister has candies [1,2,3] and the brother has candies [1,2,3], too.<br>The sister has three different kinds of candies.<br>Example 2:<br>Input: candies = [1,1,2,3]<br>Output: 2<br>Explanation: For example, the sister has candies [2,3] and the brother has candies [1,1].<br>The sister has two different kinds of candies, the brother has only one kind of candies.<br>Note:</p>
-<p>The length of the given array is in range [2, 10,000], and will be even.<br>The number in given array is in range [-100,000, 100,000].</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;// 先排序；然后从小到大遍历数组；每多一种数字就给max+1；max最大值为数组的一半；</div><div class="line">	public int distributeCandies(int[] candies) &#123;</div><div class="line">		Arrays.sort(candies);// Arrays中的排序方法为经过调优后的快速排序；</div><div class="line">		int l = candies.length;</div><div class="line">		int max = 1;</div><div class="line">		for (int i = 1; i &lt; l; i++) &#123;</div><div class="line">			if (max == l / 2) &#123;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">			if (candies[i] &gt; candies[i - 1]) &#123;</div><div class="line">				max++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return max;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.</p>
+<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
+<p>You may assume that each input would have exactly one solution and you may not use the same element twice.</p>
+<p>Input: numbers={2, 7, 11, 15}, target=9<br>Output: index1=1, index2=2</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int[] twoSum(int[] numbers, int target) &#123;</div><div class="line">        int[] res = new int[2];</div><div class="line">        c:for(int i = 0;i&lt;numbers.length;i++)&#123;</div><div class="line">            for(int j = i+1;j&lt;numbers.length;j++)&#123;</div><div class="line">                if(target == numbers[i]+numbers[j])&#123;</div><div class="line">                    res[0] = i+1;</div><div class="line">                    res[1] = j+1;</div><div class="line">                    break c;</div><div class="line">                &#125;</div><div class="line">                if(target&lt;numbers[i]+numbers[j])&#123;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return res; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1419,7 +1134,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/557. Reverse Words in a String III/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/455. Assign Cookies/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -1438,7 +1153,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/557. Reverse Words in a String III/" itemprop="url">557. Reverse Words in a String III</a></h1>
+                <a class="post-title-link" href="/2017/08/17/455. Assign Cookies/" itemprop="url">455. Assign Cookies</a></h1>
         
 
         <div class="post-meta">
@@ -1450,7 +1165,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:51:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:04+08:00">
                 2017-08-17
               </time>
             
@@ -1512,9 +1227,14 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>
-<p>Example 1:<br>Input: “Let’s take LeetCode contest”<br>Output: “s’teL ekat edoCteeL tsetnoc”<br>Note: In the string, each word is separated by single space and there will not be any extra space in the string.</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;// 首先把字符串切分成子串；用循环对于每个子串颠倒字符位置（可以用for循环写方法）；把新的字符串组拼接成字符串；返回新字符串</div><div class="line">	public String reverseWords(String s) &#123;</div><div class="line">		StringBuilder sbs = new StringBuilder();</div><div class="line">		String[] words = s.split(&quot; &quot;);// split方法设置参数为空格，以空格切分字符串；</div><div class="line">		for (String word : words) &#123;// for (循环变量类型 循环变量名称 : 要被遍历的对象) 循环体</div><div class="line">			sbs.append(reverse(word) + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">		int i = sbs.length();</div><div class="line">		sbs.replace(i - 1, i, &quot;&quot;);// 去除末尾空格（为什么长度可以到i？）</div><div class="line">		return sbs.toString();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	String reverse(String word) &#123;</div><div class="line">		StringBuilder SBword = new StringBuilder();// 创建一个StringBuilder对象以接收反转后的word</div><div class="line">		for (int i = 0; i &lt; word.length(); i++) &#123;</div><div class="line">			SBword.insert(0, word.charAt(i));// insert方法参数为在SBword的第零个字符位置插入word的第i个字符</div><div class="line">		&#125;</div><div class="line">		return SBword.toString();// 返回SBword的String类型值</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor gi, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size sj. If sj &gt;= gi, we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.</p>
+<p>Note:<br>You may assume the greed factor is always positive.<br>You cannot assign more than one cookie to one child.</p>
+<p>Example 1:<br>Input: [1,2,3], [1,1]</p>
+<p>Output: 1</p>
+<p>Explanation: You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3.<br>And even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.<br>You need to output 1.<br>Example 2:<br>Input: [1,2], [1,2,3]</p>
+<p>Output: 2</p>
+<p>Explanation: You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2.<br>You have 3 cookies and their sizes are big enough to gratify all of the children,<br>You need to output 2.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int findContentChildren(int[] g, int[] s) &#123;</div><div class="line">        Arrays.sort(g);</div><div class="line">        Arrays.sort(s);</div><div class="line">        int count = 0;</div><div class="line">        int k = 0;</div><div class="line">        for(int gi:g)&#123;</div><div class="line">            boolean tip = false;</div><div class="line">            for(int i = k;i&lt;s.length;i++)&#123;</div><div class="line">                if(s[i]&gt;=gi)&#123;</div><div class="line">                    count ++;</div><div class="line">                    tip = true;</div><div class="line">                    k = i+1;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if(!tip||k==s.length)&#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1562,7 +1282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/344.Reverse String/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/171. Excel Sheet Column Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -1581,7 +1301,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/344.Reverse String/" itemprop="url">344.Reverse String</a></h1>
+                <a class="post-title-link" href="/2017/08/17/171. Excel Sheet Column Number/" itemprop="url">171. Excel Sheet Column Number</a></h1>
         
 
         <div class="post-meta">
@@ -1593,7 +1313,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:36:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:04+08:00">
                 2017-08-17
               </time>
             
@@ -1655,8 +1375,310 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Write a function that takes a string as input and returns the string reversed.<br>Example:<br>Given s = “hello”, return “olleh”.</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public String reverseString(String s) &#123;</div><div class="line">		StringBuilder sbs = new StringBuilder();</div><div class="line">		int l = s.length();</div><div class="line">		for (int i = 0; i &lt; l; i++) &#123;// 由此看出l=5，并且string字符串计数也是从0开始，但为什么replace计数反而不正常？解答：因为java中范围边界取值实际为下标左边的值</div><div class="line">			sbs.insert(0, s.charAt(i));</div><div class="line">		&#125;</div><div class="line">		return sbs.toString();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Related to question Excel Sheet Column Title</p>
+<p>Given a column title as appear in an Excel sheet, return its corresponding column number.</p>
+<p>For example:</p>
+<pre><code>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+</code></pre><p>Credits:<br>Special thanks to @ts for adding this problem and creating all test cases.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int titleToNumber(String s) &#123;</div><div class="line">        int res = 0;</div><div class="line">        int i = 0;</div><div class="line">        while(i&lt;s.length()) &#123;</div><div class="line">            res *=26;</div><div class="line">        	res += (s.charAt(i) - &apos;A&apos;)+1;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/383. Ransom Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/383. Ransom Note/" itemprop="url">383. Ransom Note</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:04+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.</p>
+<p>Each letter in the magazine string can only be used once in your ransom note.</p>
+<p>Note:<br>You may assume that both strings contain only lowercase letters.</p>
+<p>canConstruct(“a”, “b”) -&gt; false<br>canConstruct(“aa”, “ab”) -&gt; false<br>canConstruct(“aa”, “aab”) -&gt; true</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public boolean canConstruct(String ransomNote, String magazine) &#123;</div><div class="line">        if(ransomNote.equals(&quot;&quot;))&#123;</div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line">        String[] mag = magazine.split(&quot;&quot;);</div><div class="line">        String[] ran = ransomNote.split(&quot;&quot;);</div><div class="line">        ArrayList&lt;String&gt; m = new ArrayList&lt;String&gt;();</div><div class="line">        for(String i:mag)&#123;</div><div class="line">            m.add(i);</div><div class="line">        &#125;</div><div class="line">        boolean res = true;</div><div class="line">        for(String i:ran)&#123;</div><div class="line">            boolean temp = false;</div><div class="line">            for(int j = 0;j&lt;m.size();j++)&#123;</div><div class="line">                if(i.equals(m.get(j)))&#123;</div><div class="line">                    temp = true;</div><div class="line">                    m.remove(j);</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">                if(!temp)&#123;</div><div class="line">                    res = false;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/530. Minimum Absolute Difference in BST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/530. Minimum Absolute Difference in BST/" itemprop="url">530. Minimum Absolute Difference in BST</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T21:55:03+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.</p>
+<p>Example:</p>
+<p>Input:</p>
+<p>   1<br>    \<br>     3<br>    /<br>   2</p>
+<p>Output:<br>1</p>
+<p>Explanation:<br>The minimum absolute difference is 1, which is the difference between 2 and 1 (or between 2 and 3).<br>Note: There are at least two nodes in this BST.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">public class Solution &#123;</div><div class="line">    int minDiff = Integer.MAX_VALUE;</div><div class="line">    TreeNode temp;</div><div class="line">    public int getMinimumDifference(TreeNode root) &#123;</div><div class="line">        inorder(root);</div><div class="line">        return minDiff;</div><div class="line">    &#125;</div><div class="line">    public void inorder(TreeNode root) &#123;</div><div class="line">        if (root == null) return;</div><div class="line">        inorder(root.left);</div><div class="line">        if (temp!= null) minDiff = Math.min(minDiff, root.val - temp.val);</div><div class="line">        temp = root;</div><div class="line">        inorder(root.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1695,7 +1717,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1741,7 +1763,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1763,7 +1785,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/476. Number Complement/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/349. Intersection of Two Arrays/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -286,7 +286,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/476. Number Complement/" itemprop="url">476. Number Complement</a></h1>
+                <a class="post-title-link" href="/2017/08/17/349. Intersection of Two Arrays/" itemprop="url">349. Intersection of Two Arrays</a></h1>
         
 
         <div class="post-meta">
@@ -298,7 +298,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:36:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:34+08:00">
                 2017-08-17
               </time>
             
@@ -360,8 +360,10 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.<br>Note:<br>The given integer is guaranteed to fit within the range of a 32-bit signed integer.<br>You could assume no leading zero bit in the integer’s binary representation.<br>Example 1:<br>Input: 5<br>Output: 2<br>Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.<br>Example 2:<br>Input: 1<br>Output: 0<br>Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	// 算法设计：容易看出num和result转化为二进制相加正好为11...1；即2的i次方-1；</div><div class="line">	public int findComplement(int num) &#123;</div><div class="line">		int i = 0;</div><div class="line">		int result = 0;</div><div class="line">		while (Math.pow(2, i) &lt;= num) &#123;</div><div class="line">			result += Math.pow(2, i);</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		return (result - num);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given two arrays, write a function to compute their intersection.</p>
+<p>Example:<br>Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].</p>
+<p>Note:<br>Each element in the result must be unique.<br>The result can be in any order.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int[] intersection(int[] nums1, int[] nums2) &#123;</div><div class="line">        if(nums1.length==0||nums2.length==0)&#123;</div><div class="line">            int[] fuck = new int[0];</div><div class="line">            return fuck;</div><div class="line">        &#125;</div><div class="line">        ArrayList&lt;Integer&gt;Temp = new ArrayList&lt;Integer&gt;();</div><div class="line">        Arrays.sort(nums1);</div><div class="line">        Arrays.sort(nums2);</div><div class="line">        int i = -1;</div><div class="line">        int temp = nums2[0]-1;</div><div class="line">        do&#123;</div><div class="line">            i++;</div><div class="line">            for(int j = 0;j&lt;nums1.length;j++)&#123;</div><div class="line">                if(nums2[i] == nums1[j])&#123;</div><div class="line">                    if(temp == nums2[i])&#123;</div><div class="line">                        continue;</div><div class="line">                    &#125;</div><div class="line">                    temp = nums2[i];</div><div class="line">                    Temp.add(temp);</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">                if(nums1[j]&gt;nums2[i])&#123;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;while(i&lt;nums2.length-1);</div><div class="line">        int l = Temp.size();</div><div class="line">        int[] res = new int[l];</div><div class="line">        for(int k =0;k&lt;l;k++)&#123;</div><div class="line">            res[k] = Temp.get(k);</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -409,7 +411,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/412.Fizz Buzz/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/453. Minimum Moves to Equal Array Elements/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -428,7 +430,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/412.Fizz Buzz/" itemprop="url">412. Fizz Buzz</a></h1>
+                <a class="post-title-link" href="/2017/08/17/453. Minimum Moves to Equal Array Elements/" itemprop="url">453. Minimum Moves to Equal Array Elements</a></h1>
         
 
         <div class="post-meta">
@@ -440,7 +442,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:36:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:33+08:00">
                 2017-08-17
               </time>
             
@@ -502,8 +504,13 @@
       
         
           
-            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Write a program that outputs the string representation of numbers from 1 to n.<br>But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.<br>Example:<br>n = 15,Return:[ “1”, “2”, “Fizz”, “4”, “Buzz”, “Fizz”, “7”, “8”, “Fizz”, “Buzz”, “11”, “Fizz”, “13”, “14”, “FizzBuzz”]</p>
-<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public List&lt;String&gt; fizzBuzz(int n) &#123;</div><div class="line">		List&lt;String&gt; list = new ArrayList();</div><div class="line">		for (int i = 1; i &lt; n + 1; i++) &#123;</div><div class="line">			if (i % 3 == 0 &amp;&amp; i % 5 == 0) &#123;</div><div class="line">				list.add(&quot;FizzBuzz&quot;);</div><div class="line">			&#125; else if (i % 3 == 0) &#123;</div><div class="line">				list.add(&quot;Fizz&quot;);</div><div class="line">			&#125; else if (i % 5 == 0) &#123;</div><div class="line">				list.add(&quot;Buzz&quot;);</div><div class="line">			&#125; else &#123;</div><div class="line">				list.add(String.valueOf(i));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return list;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a non-empty integer array of size n, find the minimum number of moves required to make all array elements equal, where a move is incrementing n - 1 elements by 1.</p>
+<p>Example:</p>
+<p>Input:<br>[1,2,3]</p>
+<p>Output:<br>3</p>
+<p>Explanation:<br>Only three moves are needed (remember each move increments two elements):</p>
+<p>[1,2,3]  =&gt;  [2,3,3]  =&gt;  [3,4,3]  =&gt;  [4,4,4]</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int minMoves(int[] nums) &#123;</div><div class="line">		int res = 0, max = 0;</div><div class="line">		for (int i : nums) &#123;</div><div class="line">			max = (int) Math.max(i, max);</div><div class="line">		&#125;</div><div class="line">		for (int i : nums) &#123;</div><div class="line">			res += max - i;</div><div class="line">		&#125;</div><div class="line">		return res;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -551,7 +558,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/java中的排序算法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/598. Range Addition II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -570,7 +577,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/15/java中的排序算法/" itemprop="url">java里的排序算法</a></h1>
+                <a class="post-title-link" href="/2017/08/17/598. Range Addition II/" itemprop="url">598. Range Addition II</a></h1>
         
 
         <div class="post-meta">
@@ -582,8 +589,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T23:25:27+08:00">
-                2017-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:33+08:00">
+                2017-08-17
               </time>
             
 
@@ -605,8 +612,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
                   </a>
                 </span>
 
@@ -644,22 +651,14 @@
       
         
           
-            <p>以leetcode上一题为例</p>
-<h2 id="题目：Array-Partition-I"><a href="#题目：Array-Partition-I" class="headerlink" title="题目：Array Partition I"></a>题目：Array Partition I</h2><p>Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.</p>
-<p>Example 1:</p>
-<p>Input: [1,4,3,2]</p>
-<p>Output: 4</p>
-<p>Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).</p>
-<p>Note:</p>
-<p>n is a positive integer, which is in the range of [1, 10000].<br>All the integers in the array will be in the range of [-10000, 10000].</p>
-<hr>
-<h2 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h2><h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    void bubblesort(int[] nums) &#123;</div><div class="line">		for (int i = 0; i &lt; nums.length; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; nums.length - 1 - i; j++) &#123;</div><div class="line">				if (nums[j] &gt; nums[j + 1]) &#123;</div><div class="line">					int temp = nums[j];</div><div class="line">					nums[j] = nums[j + 1];</div><div class="line">					nums[j + 1] = temp;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public int arrayPairSum(int[] nums) &#123;</div><div class="line">		bubblesort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  冒泡排序的优化<br>可以看出冒泡排序本身复杂度非常高，在排序完成后还有大量无意义的判断，针对这一特点我们可以如下优化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    void bubblesort(int[] nums) &#123;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i++) &#123;</div><div class="line">			boolean flag = true;</div><div class="line">			for (int j = 0; j &lt; nums.length - 1 - i; j++) &#123;</div><div class="line">				if (nums[j] &gt;= nums[j + 1]) &#123;</div><div class="line">					int temp = nums[j];</div><div class="line">					nums[j] = nums[j + 1];</div><div class="line">					nums[j + 1] = temp;</div><div class="line">					flag = false;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			if (flag) &#123;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public int arrayPairSum(int[] nums) &#123;</div><div class="line">		bubblesort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    int arrayPairSum(int[] nums) &#123;</div><div class="line">		selectsort(nums,0);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line">	void selectsort(int[] nums,int low) &#123;</div><div class="line">		int key = low;</div><div class="line">		for(int i = low;i&lt;nums.length;i++) &#123;</div><div class="line">			if(nums[i]&lt;nums[key]) &#123;</div><div class="line">				key = i;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		swap(nums,low,key);</div><div class="line">		low ++;</div><div class="line">		if(low&lt;nums.length) &#123;</div><div class="line">			selectsort(nums,low);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	void swap(int[] nums,int one,int two) &#123;</div><div class="line">		int temp = nums[one];</div><div class="line">		nums[one] = nums[two];</div><div class="line">		nums[two] = temp;</div><div class="line">	&#125;</div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for(int i = 0;i&lt;nums.length;i+=2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int arrayPairSum(int[] nums) &#123;</div><div class="line">		insertsort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void insertsort(int[] nums) &#123;</div><div class="line">		for (int i = 1; i &lt; nums.length; i++) &#123;</div><div class="line">			int j = i;</div><div class="line">			int temp = nums[i];</div><div class="line">			while (j &gt; 0 &amp;&amp; temp &lt; nums[j - 1]) &#123;</div><div class="line">				nums[j] = nums[j - 1];</div><div class="line">				j--;</div><div class="line">			&#125;</div><div class="line">			nums[j] = temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4.希尔排序"></a>4.希尔排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int arrayPairSum(int[] nums) &#123;</div><div class="line">		shellsort(nums);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;// dis循环二分；对每个dis分组插入排序；</div><div class="line"></div><div class="line">	void shellsort(int[] nums) &#123;</div><div class="line">		for (int dis = nums.length / 2; dis &gt; 0; dis = dis / 2) &#123;</div><div class="line">			for (int i = dis; i &lt; nums.length; i ++) &#123;</div><div class="line">				int j = i;</div><div class="line">				int temp = nums[i];</div><div class="line">				while (j &gt; dis - 1 &amp;&amp; temp &lt; nums[j - dis]) &#123;</div><div class="line">					nums[j] = nums[j - dis];</div><div class="line">					j -= dis;</div><div class="line">				&#125;</div><div class="line">				nums[j] = temp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void swap(int[] nums, int one, int two) &#123;</div><div class="line">		int temp = nums[one];</div><div class="line">		nums[one] = nums[two];</div><div class="line">		nums[two] = temp;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int arrayPairSum(int[] nums) &#123;</div><div class="line">		quicksort(nums, 0, nums.length - 1);</div><div class="line">		return sum(nums);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void quicksort(int[] nums, int low, int high) &#123;</div><div class="line">		int start = low;</div><div class="line">		int end = high;</div><div class="line">		int key = nums[low];</div><div class="line">		while (end &gt; start) &#123;</div><div class="line">			while (end &gt; start &amp;&amp; nums[end] &gt;= key) &#123;</div><div class="line">				end--;</div><div class="line">			&#125;</div><div class="line">			if (nums[end] &lt; key) &#123;</div><div class="line">				swap(nums, end, start);</div><div class="line">			&#125;</div><div class="line">			while (end &gt; start &amp;&amp; nums[start] &lt;= nums[end]) &#123;</div><div class="line">				start++;</div><div class="line">			&#125;</div><div class="line">			if (nums[start] &gt; nums[end]) &#123;</div><div class="line">				swap(nums, end, start);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		if (start &gt; low) &#123;</div><div class="line">			quicksort(nums, low, start - 1);</div><div class="line">		&#125;</div><div class="line">		if (end &lt; high) &#123;</div><div class="line">			quicksort(nums, end + 1, high);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	void swap(int[] nums, int one, int two) &#123;</div><div class="line">		int temp = nums[one];</div><div class="line">		nums[one] = nums[two];</div><div class="line">		nums[two] = temp;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	int sum(int[] nums) &#123;</div><div class="line">		int sum = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length - 1; i += 2) &#123;</div><div class="line">			sum += nums[i];</div><div class="line">		&#125;</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an m * n matrix M initialized with all 0’s and several update operations.</p>
+<p>Operations are represented by a 2D array, and each operation is represented by an array with two positive integers a and b, which means M[i][j] should be added by one for all 0 &lt;= i &lt; a and 0 &lt;= j &lt; b.</p>
+<p>You need to count and return the number of maximum integers in the matrix after performing all the operations.</p>
+<p>Example 1:<br>Input:<br>m = 3, n = 3<br>operations = [[2,2],[3,3]]<br>Output: 4<br>Explanation:<br>Initially, M =<br>[[0, 0, 0],<br> [0, 0, 0],<br> [0, 0, 0]]</p>
+<p>After performing [2,2], M =<br>[[1, 1, 0],<br> [1, 1, 0],<br> [0, 0, 0]]</p>
+<p>After performing [3,3], M =<br>[[2, 2, 1],<br> [2, 2, 1],<br> [1, 1, 1]]</p>
+<p>So the maximum integer in M is 2, and there are four of it in M. So return 4.<br>Note:<br>The range of m and n is [1,40000].<br>The range of a is [1,m], and the range of b is [1,n].<br>The range of operations size won’t exceed 10,000.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int maxCount(int m, int n, int[][] ops) &#123;</div><div class="line">		int l = m, w = n;</div><div class="line">		for (int[] op : ops) &#123;</div><div class="line">			l = (int) Math.min(op[0], l);</div><div class="line">			w = (int) Math.min(op[1], w);</div><div class="line">		&#125;</div><div class="line">		return l * w;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -707,7 +706,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/492. Construct the Rectangle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="詹翀&杨旻璐">
@@ -726,7 +725,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/14/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/08/17/492. Construct the Rectangle/" itemprop="url">492. Construct the Rectangle</a></h1>
         
 
         <div class="post-meta">
@@ -738,8 +737,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T22:01:35+08:00">
-                2017-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:33+08:00">
+                2017-08-17
               </time>
             
 
@@ -748,6 +747,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -778,16 +799,885 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>For a web developer, it is very important to know how to design a web page’s size. So, given a specific rectangular web page’s area, your job by now is to design a rectangular web page, whose length L and width W satisfy the following requirements:</p>
+<ol>
+<li><p>The area of the rectangular web page you designed must equal to the given target area.</p>
+</li>
+<li><p>The width W should not be larger than the length L, which means L &gt;= W.</p>
+</li>
+<li><p>The difference between length L and width W should be as small as possible.<br>You need to output the length L and the width W of the web page you designed in sequence.<br>Example:<br>Input: 4<br>Output: [2, 2]<br>Explanation: The target area is 4, and all the possible ways to construct it are [1,4], [2,2], [4,1].<br>But according to requirement 2, [1,4] is illegal; according to requirement 3,  [4,1] is not optimal compared to [2,2]. So the length L is 2, and the width W is 2.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public int[] constructRectangle(int area) &#123;</div><div class="line">		int[] res = new int[2];</div><div class="line">		for (int i = (int) Math.sqrt(area); i &gt; 0; i--) &#123;</div><div class="line">			int k = area / i;</div><div class="line">			if (i * k == area) &#123;</div><div class="line">				res[0] = k;</div><div class="line">				res[1] = i;</div><div class="line">				break;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return res;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/283. Move Zeroes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/283. Move Zeroes/" itemprop="url">283. Move Zeroes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:33+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p>For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].</p>
+<p>Note:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.<br>Credits:<br>Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public void moveZeroes(int[] nums) &#123;</div><div class="line">		int pos = 0;</div><div class="line">		int temp = 0;</div><div class="line">		for (int i = 0; i &lt; nums.length; i++) &#123;</div><div class="line">			if (nums[i] != 0) &#123;</div><div class="line">				temp = nums[i];</div><div class="line">				nums[i] = 0;</div><div class="line">				nums[pos] = temp;</div><div class="line">				pos++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/389. Find the Difference/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/389. Find the Difference/" itemprop="url">389. Find the Difference</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:32+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given two strings s and t which consist of only lowercase letters.</p>
+<p>String t is generated by random shuffling string s and then add one more letter at a random position.</p>
+<p>Find the letter that was added in t.</p>
+<p>Example:</p>
+<p>Input:<br>s = “abcd”<br>t = “abcde”</p>
+<p>Output:<br>e</p>
+<p>Explanation:<br>‘e’ is the letter that was added.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	public char findTheDifference(String s, String t) &#123;</div><div class="line">		int si = 0;</div><div class="line">		int ti = 0;</div><div class="line">		for (int i = 0; i &lt; s.length(); i++) &#123;</div><div class="line">			si ^= (int) s.charAt(i);</div><div class="line">		&#125;</div><div class="line">		for (int i = 0; i &lt; t.length(); i++) &#123;</div><div class="line">			ti ^= (int) t.charAt(i);</div><div class="line">		&#125;</div><div class="line">		return (char) (si ^ ti);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/538. Convert BST to Greater Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/538. Convert BST to Greater Tree/" itemprop="url">538. Convert BST to Greater Tree</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:32+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.</p>
+<p>Example:</p>
+<p>Input: The root of a Binary Search Tree like this:<br>              5<br>            /   \<br>           2     13</p>
+<p>Output: The root of a Greater Tree like this:<br>             18<br>            /   \<br>          20     13</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    int sum = 0;</div><div class="line">    public TreeNode convertBST(TreeNode root) &#123;</div><div class="line">        convert(root);</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">    public void convert(TreeNode cur) &#123;</div><div class="line">        if (cur == null) return;</div><div class="line">        convert(cur.right);</div><div class="line">        cur.val += sum;</div><div class="line">        sum = cur.val;</div><div class="line">        convert(cur.left);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/606. Construct String from Binary Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/606. Construct String from Binary Tree/" itemprop="url">606. Construct String from Binary Tree</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:32+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>You need to construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way.</p>
+<p>The null node needs to be represented by empty parenthesis pair “()”. And you need to omit all the empty parenthesis pairs that don’t affect the one-to-one mapping relationship between the string and the original binary tree.</p>
+<p>Example 1:<br>Input: Binary tree: [1,2,3,4]<br>       1<br>     /   \<br>    2     3<br>   /<br>  4     </p>
+<p>Output: “1(2(4))(3)”</p>
+<p>Explanation: Originallay it needs to be “1(2(4)())(3()())”,<br>but you need to omit all the unnecessary empty parenthesis pairs.<br>And it will be “1(2(4))(3)”.<br>Example 2:<br>Input: Binary tree: [1,2,3,null,4]<br>       1<br>     /   \<br>    2     3<br>     \<br>      4 </p>
+<p>Output: “1(2()(4))(3)”</p>
+<p>Explanation: Almost the same as the first example,<br>except we can’t omit the first parenthesis pair to break the one-to-one mapping relationship between the input and the output.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">	int sum = 0;</div><div class="line"></div><div class="line">	public TreeNode convertBST(TreeNode root) &#123;</div><div class="line">		if (root == null)</div><div class="line">			return null;</div><div class="line">		convertBST(root.right);// 反向遍历，先把右边处理好</div><div class="line">		root.val += sum;</div><div class="line">		sum = root.val;</div><div class="line">		convertBST(root.left);</div><div class="line">		return root;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/653. Two Sum IV - Input is a BST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/653. Two Sum IV - Input is a BST/" itemprop="url">653. Two Sum IV - Input is a BST</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:31+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such that their sum is equal to the given target.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public boolean findTarget(TreeNode root, int k) &#123;</div><div class="line">        Set &lt; Integer &gt; set = new HashSet();</div><div class="line">        return find(root, k, set);</div><div class="line">    &#125;</div><div class="line">    public boolean find(TreeNode root, int k, Set &lt; Integer &gt; set) &#123;</div><div class="line">        if (root == null)</div><div class="line">            return false;</div><div class="line">        if (set.contains(k - root.val))</div><div class="line">            return true;</div><div class="line">        set.add(root.val);</div><div class="line">        return find(root.left, k, set) || find(root.right, k, set);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/258. Add Digits/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹翀&杨旻璐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山丘">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/258. Add Digits/" itemprop="url">258. Two Sum IV - Input is a BST</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T19:34:31+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such that their sum is equal to the given target.</p>
+<h1 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public boolean findTarget(TreeNode root, int k) &#123;</div><div class="line">        Set &lt; Integer &gt; set = new HashSet();</div><div class="line">        return find(root, k, set);</div><div class="line">    &#125;</div><div class="line">    public boolean find(TreeNode root, int k, Set &lt; Integer &gt; set) &#123;</div><div class="line">        if (root == null)</div><div class="line">            return false;</div><div class="line">        if (set.contains(k - root.val))</div><div class="line">            return true;</div><div class="line">        set.add(root.val);</div><div class="line">        return find(root.left, k, set) || find(root.right, k, set);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -826,7 +1716,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -872,7 +1762,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -894,7 +1784,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
